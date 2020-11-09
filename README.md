@@ -32,7 +32,34 @@ Learn more from <https://angular.io/guide/setup-local>
 Branch: [step_2_wechaty](https://github.com/huan/ng2020-wechaty/tree/step_2_wechaty)
 
 ```sh
-test
+npm i @chatie/angular brolog
+```
+
+#### `app.module.ts`
+
+```ts
+import { WechatyModule } from '@chatie/angular'
+@NgModule({
+  imports: [
+    WechatyModule,
+    ...
+  ],
+  ...
+```
+
+#### `app.component.html`
+
+```html
+<wechaty
+  #wechaty
+  token="puppet_hostie_your_example_token"
+
+  (heartbeat) = "onHeartbeat($event)"
+  (scan)      = "onScan($event)"
+  (login)     = "wechaty.startSyncMessage(); onLogin($event)"
+  (message)   = "onMessage($event)"
+>
+</wechaty>
 ```
 
 Learn more:

@@ -42,20 +42,20 @@
     #wechaty
     token="puppet_hostie_your_example_token"
 
-    (heartbeat) = "this.onHeartbeat($event)"
-    (scan)      = "this.onScan($event)"
-    (login)     = "wechaty.startSyncMessage(); this.onLogin($event)"
-    (message)   = "this.onMessage($event)"
+    (heartbeat) = "onHeartbeat($event)"
+    (scan)      = "onScan($event)"
+    (login)     = "wechaty.startSyncMessage(); onLogin($event)"
+    (message)   = "onMessage($event)"
   >
   </wechaty>
 
-  <h1 *ngIf="!this.qrCode && !this.userName">Loading...</h1>
-  <img *ngIf="this.qrCode" [src]="'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + this.qrCode">
-  <div *ngIf="this.userName">{{ this.userName }}</div>
+  <h1 *ngIf="!qrCode && !userName">Loading...</h1>
+  <img *ngIf="qrCode" [src]="'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + qrCode">
+  <div *ngIf="userName">{{ userName }}</div>
 
   <!-- Terminal -->
   <div class="terminal">
-    <pre *ngFor = "let message of this.messageList">{{ message }}</pre>
+    <pre *ngFor = "let message of messageList">{{ message }}</pre>
   </div>
 
   <!-- Footer -->
