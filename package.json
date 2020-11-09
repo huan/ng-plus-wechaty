@@ -16,6 +16,8 @@
     "@chatie/tsconfig": "^0.13.0"
   },
   "scripts": {
+    "example:toxicity": "ts-node examples/toxicity",
+    "example:qna": "ts-node examples/qna",
     "lint": "echo lint",
     "test": "echo test"
   },
