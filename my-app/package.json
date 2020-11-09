@@ -19,7 +19,10 @@
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
+    "@chatie/angular": "^0.7.4",
+    "brolog": "^1.12.4",
     "rxjs": "~6.6.0",
+    "state-switch": "^0.6.18",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },

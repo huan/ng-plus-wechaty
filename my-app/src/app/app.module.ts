@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { Brolog } from 'brolog';
+import { WechatyModule } from '@chatie/angular';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,9 +11,13 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    WechatyModule
   ],
-  providers: [],
+  providers: [{
+    provide: Brolog,
+    useFactory: () => Brolog.instance('silly'),
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

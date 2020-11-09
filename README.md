@@ -2,13 +2,11 @@
 
 Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular
 
-## Ng+ Developers Conference 2020
-
-[![Huan Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular](docs/images/ng2020-topic.webp)](https://ng-plus.dev/#/topics)
-
-Knowledge, ideas, and insights for the Next Generation
+[![Huan Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular](docs/images/ng2020-huan-keynote.webp)](https://ng-plus.dev/#/topics)
 
 > November 21 - 22 @online
+
+Knowledge, ideas, and insights for the Next Generation
 
 - ngChina 2020: <https://ng-plus.dev>
 - ngChina 2019: <https://ng-china.org>
@@ -40,6 +38,27 @@ test
 Learn more:
 
 1. [How to create your own Wechaty Hostie Token with the Web Protocol #1986](https://github.com/wechaty/wechaty/issues/1986) This step you will need a Wechaty Token for connecting to the Wechaty Puppet Service. Please read the issue `wechaty/wechaty#1986` for how to make it by yourself.
+
+Example: How to setup a Wechaty token (copy & paste ready)
+
+```sh
+export WECHATY_TOKEN=puppet_hostie_your_example_token
+# Set port for your hostie service: must be published accessible on the internet
+export WECHATY_HOSTIE_PORT=8788
+
+export WECHATY_PUPPET=wechaty-puppet-puppeteer
+export WECHATY_LOG=verbose
+
+docker run \
+  --rm \
+  -ti \
+  -e WECHATY_LOG \
+  -e WECHATY_PUPPET \
+  -e WECHATY_HOSTIE_PORT \
+  -e WECHATY_TOKEN \
+  -p "$WECHATY_HOSTIE_PORT" \
+  wechaty/wechaty
+```
 
 ### Step 3. TensorFlow.js Toxicity
 
