@@ -44,6 +44,7 @@ Learn more:
 ### Step 3. TensorFlow.js Toxicity
 
 ```sh
+npm install @tensorflow/tfjs
 npm install @tensorflow-models/toxicity
 ```
 
@@ -53,6 +54,7 @@ Learn more:
 
 1. [TensorFlow.js models: toxicity classifier source](https://github.com/tensorflow/tfjs-models/tree/master/toxicity)
 1. [TensorFlow.js toxicity classifier demo](https://storage.googleapis.com/tfjs-models/demos/toxicity/index.html): This is a demo of the TensorFlow.js toxicity model, which classifies text according to whether it exhibits offensive attributes (i.e. profanity, sexual explicitness).
+1. [Text classification using TensorFlow.js: An example of detecting offensive language in browser](https://medium.com/tensorflow/text-classification-using-tensorflow-js-an-example-of-detecting-offensive-language-in-browser-e2b94e3565ce)
 
 ### 4. TensorFlow.js QnA
 

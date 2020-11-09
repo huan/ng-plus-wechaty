@@ -3,9 +3,17 @@
   "version": "0.0.1",
   "description": "Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@tensorflow-models/qna": "^1.0.0",
+    "@tensorflow-models/toxicity": "^1.2.2",
+    "@tensorflow/tfjs": "^2.7.0",
+    "@tensorflow/tfjs-node": "^2.7.0"
+  },
   "devDependencies": {
-    "@angular/cli": "^10.2.0"
+    "@angular/cli": "^10.2.0",
+    "@chatie/eslint-config": "^0.12.1",
+    "@chatie/git-scripts": "^0.6.2",
+    "@chatie/tsconfig": "^0.13.0"
   },
   "scripts": {
     "test": "echo test"
@@ -25,5 +33,10 @@
   "bugs": {
     "url": "https://github.com/huan/ng2020-wechaty/issues"
   },
-  "homepage": "https://github.com/huan/ng2020-wechaty#readme"
+  "homepage": "https://github.com/huan/ng2020-wechaty#readme",
+  "git": {
+    "scripts": {
+      "pre-push": "npx git-scripts-pre-push"
+    }
+  }
 }
