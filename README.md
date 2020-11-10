@@ -62,11 +62,9 @@ import { WechatyModule } from '@chatie/angular'
 </wechaty>
 ```
 
-Learn more:
+#### Create a Wechaty Hostie Token
 
-1. [How to create your own Wechaty Hostie Token with the Web Protocol #1986](https://github.com/wechaty/wechaty/issues/1986) This step you will need a Wechaty Token for connecting to the Wechaty Puppet Service. Please read the issue `wechaty/wechaty#1986` for how to make it by yourself.
-
-Example: How to setup a Wechaty token (copy & paste ready)
+Copy the following shell script and then paste it into the term of your server, to setup your Wechaty token:
 
 ```sh
 export WECHATY_TOKEN=puppet_hostie_your_example_token
@@ -86,6 +84,8 @@ docker run \
   -p "$WECHATY_HOSTIE_PORT" \
   wechaty/wechaty
 ```
+
+Learn more: [How to create your own Wechaty Hostie Token with the Web Protocol #1986](https://github.com/wechaty/wechaty/issues/1986) This step you will need a Wechaty Token for connecting to the Wechaty Puppet Service. Please read the issue `wechaty/wechaty#1986` for how to make it by yourself.
 
 ### Step 3. TensorFlow.js Toxicity
 
