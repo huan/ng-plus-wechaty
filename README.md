@@ -17,7 +17,7 @@ We have four steps in our live coding, they are saved in four separate branches 
 
 ### Step 1. `ng new my-app`
 
-Branch: [step_1_ng_new_my-app](https://github.com/huan/ng2020-wechaty/tree/step_1_ng_new_my-app)
+Branch: [ng_china_2020_step_1_ng_new_my-app](https://github.com/huan/ng2020-wechaty/tree/ng_china_2020_step_1_ng_new_my-app)
 
 ```sh
 npx --package @angular/cli ng new my-app
@@ -29,7 +29,7 @@ Learn more from <https://angular.io/guide/setup-local>
 
 ### Step 2. Wechaty
 
-Branch: [step_2_wechaty](https://github.com/huan/ng2020-wechaty/tree/step_2_wechaty)
+Branch: [ng_china_2020_step_2_wechaty](https://github.com/huan/ng2020-wechaty/tree/ng_china_2020_step_2_wechaty)
 
 ```sh
 npm i @chatie/angular brolog
@@ -96,7 +96,7 @@ npm install @tensorflow-models/toxicity
 ng generate service toxicity
 ```
 
-Branch: [step_3_tensorflow-models_toxicity](https://github.com/huan/ng2020-wechaty/tree/step_3_tensorflow-models_toxicity)
+Branch: [ng_china_2020_step_3_toxicity](https://github.com/huan/ng2020-wechaty/tree/ng_china_2020_step_3_toxicity)
 
 [![TensorFlow.js Toxicity Model](docs/images/toxicity.webp)](https://storage.googleapis.com/tfjs-models/demos/toxicity/index.html)
 
@@ -105,6 +105,8 @@ Learn more:
 1. [TensorFlow.js models: toxicity classifier source](https://github.com/tensorflow/tfjs-models/tree/master/toxicity)
 1. [TensorFlow.js toxicity classifier demo](https://storage.googleapis.com/tfjs-models/demos/toxicity/index.html): This is a demo of the TensorFlow.js toxicity model, which classifies text according to whether it exhibits offensive attributes (i.e. profanity, sexual explicitness).
 1. [Text classification using TensorFlow.js: An example of detecting offensive language in browser](https://medium.com/tensorflow/text-classification-using-tensorflow-js-an-example-of-detecting-offensive-language-in-browser-e2b94e3565ce)
+
+The traffic light code is copy/pasted from this great tutorial: [Stop in the Name of the Traffic Light](https://medium.com/@robhitt/stop-in-the-name-of-the-traffic-light-c5f4d8a9d2e6)
 
 ### 4. TensorFlow.js QnA
 
