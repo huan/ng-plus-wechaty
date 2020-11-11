@@ -49,6 +49,12 @@
   >
   </wechaty>
 
+  <div class="container">
+    <div class="light" id="red"   [ngClass]="{ 'light-visible'
+     : red } "></div>
+    <div class="light" id="green" [ngClass]="{ 'light-visible' : green }"></div>
+  </div>
+
   <h1 *ngIf="!qrCode && !userName">Loading...</h1>
   <img *ngIf="qrCode" [src]="'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + qrCode">
   <div *ngIf="userName">{{ userName }}</div>

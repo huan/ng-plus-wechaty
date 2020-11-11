@@ -286,3 +286,30 @@ svg#clouds {
     visibility: hidden;
   }
 }
+
+/** light **/
+
+.container{
+  width: 300px;
+  margin: auto;
+  padding: 3px;
+}
+.light{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  opacity: 10%;
+  padding: 10px;
+  border: 5px solid #000;
+  margin: auto;
+  transition: all 0.3s ease-in;
+}
+.light-visible {opacity: 1;}
+#red {
+  background-color: red;
+  float: left;
+}
+#green {
+  background-color: #27e833;
+  float: right;
+}

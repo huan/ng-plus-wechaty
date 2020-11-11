@@ -92,9 +92,13 @@ Learn more: [How to create your own Wechaty Hostie Token with the Web Protocol #
 ```sh
 npm install @tensorflow/tfjs
 npm install @tensorflow-models/toxicity
+
+ng generate service toxicity
 ```
 
 Branch: [step_3_tensorflow-models_toxicity](https://github.com/huan/ng2020-wechaty/tree/step_3_tensorflow-models_toxicity)
+
+[![TensorFlow.js Toxicity Model](docs/images/toxicity.webp)](https://storage.googleapis.com/tfjs-models/demos/toxicity/index.html)
 
 Learn more:
 

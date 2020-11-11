@@ -20,6 +20,8 @@
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",
     "@chatie/angular": "^0.7.4",
+    "@tensorflow-models/toxicity": "^1.2.2",
+    "@tensorflow/tfjs": "^2.7.0",
     "brolog": "^1.12.4",
     "rxjs": "~6.6.0",
     "state-switch": "^0.6.18",
