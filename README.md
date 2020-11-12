@@ -17,6 +17,44 @@ Knowledge, ideas, and insights for the Next Generation
 
 > Google Slides <https://docs.google.com/presentation/d/1Gd3D8bS6OifXDsdSe0x5i6XsP_uISX3W9tR8yBA0mYs/edit?usp=sharing>
 
+## Requirements
+
+1. Wechaty Token
+
+### 1. Wechaty Token: apply a token from Wechaty Puppet Service Providers
+
+You can apply a Windows / Pad protocol token from our puppet service providers:
+
+1. [Apply Wechaty Hostie Token](https://github.com/wechaty/puppet-service-providers/issues/new/choose)
+1. [Puppet Service Providers FAQ](https://github.com/wechaty/puppet-service-providers/issues/1)
+
+#### Create a Wechaty Hostie Token
+
+Copy the following shell script and then paste it into the term of your server, to setup your Wechaty token:
+
+```sh
+export WECHATY_TOKEN=puppet_hostie_ng-plus-wechaty
+# Set port for your hostie service: must be published accessible on the internet
+export WECHATY_HOSTIE_PORT=8788
+
+export WECHATY_PUPPET=wechaty-puppet-hostie
+export WECHATY_PUPPET_HOSTIE_TOKEN=puppet_hostie_YOUR_TOKEN_AT_HERE
+export WECHATY_LOG=verbose
+
+docker run \
+  --rm \
+  -ti \
+  -e WECHATY_LOG \
+  -e WECHATY_PUPPET \
+  -e WECHATY_PUPPET_HOSTIE_TOKEN \
+  -e WECHATY_HOSTIE_PORT \
+  -e WECHATY_TOKEN \
+  -p "$WECHATY_HOSTIE_PORT" \
+  wechaty/wechaty
+```
+
+Learn more: [How to create your own Wechaty Hostie Token with the Web Protocol #1986](https://github.com/wechaty/wechaty/issues/1986) This step you will need a Wechaty Token for connecting to the Wechaty Puppet Service. Please read the issue `wechaty/wechaty#1986` for how to make it by yourself.
+
 ## Live Coding Explanation
 
 We have four steps in our live coding, they are saved in four separate branches for easy loading and testing.
@@ -67,40 +105,6 @@ import { WechatyModule } from '@chatie/angular'
 >
 </wechaty>
 ```
-
-#### Apply a Token from Wechaty Puppet Service Providers
-
-You can apply a Windows / Pad protocol token from our puppet service providers:
-
-1. [Apply Wechaty Hostie Token](https://github.com/wechaty/puppet-service-providers/issues/new/choose)
-1. [Puppet Service Providers FAQ](https://github.com/wechaty/puppet-service-providers/issues/1)
-
-#### Create a Wechaty Hostie Token
-
-Copy the following shell script and then paste it into the term of your server, to setup your Wechaty token:
-
-```sh
-export WECHATY_TOKEN=puppet_hostie_ng-plus-wechaty
-# Set port for your hostie service: must be published accessible on the internet
-export WECHATY_HOSTIE_PORT=8788
-
-export WECHATY_PUPPET=wechaty-puppet-hostie
-export WECHATY_PUPPET_HOSTIE_TOKEN=puppet_hostie_YOUR_TOKEN_AT_HERE
-export WECHATY_LOG=verbose
-
-docker run \
-  --rm \
-  -ti \
-  -e WECHATY_LOG \
-  -e WECHATY_PUPPET \
-  -e WECHATY_PUPPET_HOSTIE_TOKEN \
-  -e WECHATY_HOSTIE_PORT \
-  -e WECHATY_TOKEN \
-  -p "$WECHATY_HOSTIE_PORT" \
-  wechaty/wechaty
-```
-
-Learn more: [How to create your own Wechaty Hostie Token with the Web Protocol #1986](https://github.com/wechaty/wechaty/issues/1986) This step you will need a Wechaty Token for connecting to the Wechaty Puppet Service. Please read the issue `wechaty/wechaty#1986` for how to make it by yourself.
 
 ### Step 3. TensorFlow.js Toxicity
 
