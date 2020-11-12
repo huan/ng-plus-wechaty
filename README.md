@@ -52,7 +52,7 @@ import { WechatyModule } from '@chatie/angular'
 ```html
 <wechaty
   #wechaty
-  token="puppet_hostie_your_example_token"
+  token="puppet_hostie_ng-plus-wechaty"
 
   (heartbeat) = "onHeartbeat($event)"
   (scan)      = "onScan($event)"
@@ -62,16 +62,24 @@ import { WechatyModule } from '@chatie/angular'
 </wechaty>
 ```
 
+#### Apply a Token from Wechaty Puppet Service Providers
+
+You can apply a Windows / Pad protocol token from our puppet service providers:
+
+1. [Apply Wechaty Hostie Token](https://github.com/wechaty/puppet-service-providers/issues/new/choose)
+1. [Puppet Service Providers FAQ](https://github.com/wechaty/puppet-service-providers/issues/1)
+
 #### Create a Wechaty Hostie Token
 
 Copy the following shell script and then paste it into the term of your server, to setup your Wechaty token:
 
 ```sh
-export WECHATY_TOKEN=puppet_hostie_your_example_token
+export WECHATY_TOKEN=puppet_hostie_ng-plus-wechaty
 # Set port for your hostie service: must be published accessible on the internet
 export WECHATY_HOSTIE_PORT=8788
 
-export WECHATY_PUPPET=wechaty-puppet-puppeteer
+export WECHATY_PUPPET=wechaty-puppet-hostie
+export WECHATY_PUPPET_HOSTIE_TOKEN=puppet_hostie_YOUR_TOKEN_AT_HERE
 export WECHATY_LOG=verbose
 
 docker run \
@@ -79,6 +87,7 @@ docker run \
   -ti \
   -e WECHATY_LOG \
   -e WECHATY_PUPPET \
+  -e WECHATY_PUPPET_HOSTIE_TOKEN \
   -e WECHATY_HOSTIE_PORT \
   -e WECHATY_TOKEN \
   -p "$WECHATY_HOSTIE_PORT" \
@@ -89,14 +98,14 @@ Learn more: [How to create your own Wechaty Hostie Token with the Web Protocol #
 
 ### Step 3. TensorFlow.js Toxicity
 
+Branch: [ng_china_2020_step_3_toxicity](https://github.com/huan/ng2020-wechaty/tree/ng_china_2020_step_3_toxicity)
+
 ```sh
 npm install @tensorflow/tfjs
 npm install @tensorflow-models/toxicity
 
 ng generate service toxicity
 ```
-
-Branch: [ng_china_2020_step_3_toxicity](https://github.com/huan/ng2020-wechaty/tree/ng_china_2020_step_3_toxicity)
 
 [![TensorFlow.js Toxicity Model](docs/images/toxicity.webp)](https://storage.googleapis.com/tfjs-models/demos/toxicity/index.html)
 
@@ -110,6 +119,8 @@ The traffic light code is copy/pasted from this great tutorial: [Stop in the Nam
 
 ### 4. TensorFlow.js QnA
 
+To be written.
+
 Branch: [step_4_tensorflow-models_qna](https://github.com/huan/ng2020-wechaty/tree/step_4_tensorflow-models_qna)
 
 ```sh
@@ -117,7 +128,7 @@ npm install @tensorflow-models/qna
 ```
 
 ```ts
-
+// to be written
 ```
 
 Learn more:

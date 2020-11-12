@@ -11,7 +11,6 @@ import * as toxicity from '@tensorflow-models/toxicity';
 export class ToxicityService {
 
   private model: toxicity.ToxicityClassifier;
-  private loading: boolean;
 
   constructor(private log: Brolog) {
     log.verbose('ToxicityService', 'constructor()');
@@ -22,19 +21,10 @@ export class ToxicityService {
   private init(): void {
     this.log.verbose('Toxicity', 'init()');
 
-    // The minimum prediction confidence.
-    const threshold = 0.9;
-    // Which toxicity labels to return.
-    const labelsToInclude = [];
-
-    // Load the model. Users optionally pass in a threshold and an array of
-    // labels to include.
-    this.loading = true;
-    toxicity.load(threshold, labelsToInclude)
+    toxicity.load(0.9, [])
       .then(model => this.model = model)
       .catch(e => this.log.error('Toxicity', 'init() load rejection: %s', e))
       .finally(() => {
-        this.loading = false;
         this.log.verbose('Toxicity', 'init() loading toxicity model done.');
       });
   }
@@ -48,13 +38,11 @@ export class ToxicityService {
     }
 
     const sentences = [text];
-
-    this.log.verbose('Toxicity', 'classify(%s)', text);
     const predictions = await this.model.classify(sentences);
-    this.log.verbose('Toxicity', 'classify(): %s', JSON.stringify(predictions));
+    this.log.verbose('Toxicity', 'classify() predictions: %s', JSON.stringify(predictions));
 
     const result = predictions.map(p => p.results[0].match).some(m => m);
-    this.log.verbose('Toxicity', 'classify(): ', result);
+    this.log.verbose('Toxicity', 'classify() result: %s', result);
 
     return result;
   }

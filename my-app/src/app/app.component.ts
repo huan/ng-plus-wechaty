@@ -13,10 +13,9 @@ export class AppComponent {
 
   qrCode?: string;
   userName?: string;
-  messageList: string[] = [];
 
-  green = false;
-  red = false;
+  messageList: string[] = [];
+  isToxicity: boolean;
 
   constructor(
     public log: Brolog,
@@ -44,11 +43,9 @@ export class AppComponent {
   async onMessage(event: any): Promise<void> {
     this.log.verbose('AppComponent', 'onMessage(%s)', JSON.stringify(event));
     if (event.text) {
-      this.messageList.push(`${event.text}`);
 
-      const isToxicity = await this.toxicity.classify(event.text);
-      this.red = isToxicity;
-      this.green = !isToxicity;
+      this.isToxicity = await this.toxicity.classify(event.text);
+      this.messageList.push(`${event.text}`);
     }
   }
 }

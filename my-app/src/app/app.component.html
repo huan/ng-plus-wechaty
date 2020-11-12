@@ -40,7 +40,7 @@
 
   <wechaty
     #wechaty
-    token="puppet_hostie_your_example_token"
+    token="puppet_hostie_ng-plus-wechaty"
 
     (heartbeat) = "onHeartbeat($event)"
     (scan)      = "onScan($event)"
@@ -51,8 +51,8 @@
 
   <div class="container">
     <div class="light" id="red"   [ngClass]="{ 'light-visible'
-     : red } "></div>
-    <div class="light" id="green" [ngClass]="{ 'light-visible' : green }"></div>
+     : isToxicity } "></div>
+    <div class="light" id="green" [ngClass]="{ 'light-visible' : !isToxicity }"></div>
   </div>
 
   <h1 *ngIf="!qrCode && !userName">Loading...</h1>
