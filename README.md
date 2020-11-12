@@ -21,7 +21,7 @@ Knowledge, ideas, and insights for the Next Generation
 
 1. Wechaty Token
 
-### 1. Wechaty Token: apply a token from Wechaty Puppet Service Providers
+### Wechaty Token: apply a token from Wechaty Puppet Service Providers
 
 You can apply a Windows / Pad protocol token from our puppet service providers:
 
