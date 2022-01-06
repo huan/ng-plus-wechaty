@@ -1,24 +1,5 @@
 # ng-plus-wechaty
 
-Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular
-
-[![Huan Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular](docs/images/ng2020-huan-keynote.webp)](https://ng-plus.dev/#/topics)
-
-> November 21 - 22 @online
-
-Knowledge, ideas, and insights for the Next Generation
-
-- ngChina 2020: <https://ng-plus.dev>
-- ngChina 2019: <https://ng-china.org>
-
-## Slides & Video
-
-[![Huan Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular](docs/images/conversational-ai-chatbot-and-angular.png)](https://docs.google.com/presentation/d/1Gd3D8bS6OifXDsdSe0x5i6XsP_uISX3W9tR8yBA0mYs/edit?usp=sharing)
-
-> Google Slides <https://docs.google.com/presentation/d/1Gd3D8bS6OifXDsdSe0x5i6XsP_uISX3W9tR8yBA0mYs/edit?usp=sharing>
-
-Talk Video: <https://youtu.be/SACugbTNQnc>
-
 ## Requirements
 
 1. Wechaty Token
@@ -27,20 +8,26 @@ Talk Video: <https://youtu.be/SACugbTNQnc>
 
 You can apply a Windows / Pad protocol token from our puppet service providers:
 
-1. [Apply Wechaty Hostie Token](https://github.com/wechaty/puppet-service-providers/issues/new/choose)
-1. [Puppet Service Providers FAQ](https://github.com/wechaty/puppet-service-providers/issues/1)
+1. [Apply Wechaty Puppet Service Token](https://github.com/wechaty/puppet-supports/issues/new/choose)
+1. [Wechaty Puppet Service FAQ](https://wechaty.js.org/docs/puppet-services/faq)
 
-#### Create a Wechaty Hostie Token
+#### Create a Wechaty Puppet Service Token by yourself (DIY)
 
 Copy the following shell script and then paste it into the term of your server, to setup your Wechaty token:
 
 ```sh
-export WECHATY_TOKEN=puppet_hostie_ng-plus-wechaty
-# Set port for your hostie service: must be published accessible on the internet
-export WECHATY_HOSTIE_PORT=8788
+# learn how to DIY a Wechaty Puppet Service token at http://wechaty.js.org/docs/puppet-services/diy
+export WECHATY_TOKEN=insecure_wechaty_puppet_service_token_diy
 
-export WECHATY_PUPPET=wechaty-puppet-hostie
-export WECHATY_PUPPET_HOSTIE_TOKEN=puppet_hostie_YOUR_TOKEN_AT_HERE
+# Set port for your hostie service: must be published accessible on the internet
+# Wechaty IO Client use this port to publish the Puppet Service
+export WECHATY_PUPPET_SERVER_PORT=48788
+
+# learn more about Wechaty Puppet PadLocal at https://wechaty.js.org/docs/puppet-services/padlocal
+export WECHATY_PUPPET=wechaty-puppet-padlocal
+# get a 7 days free token at PadLocal official website: http://pad-local.com/
+export WECHATY_PUPPET_PADLOCAL_TOKEN=YOUR_PADLOCAL_TOKEN_AT_HERE
+
 export WECHATY_LOG=verbose
 
 docker run \
@@ -48,14 +35,14 @@ docker run \
   -ti \
   -e WECHATY_LOG \
   -e WECHATY_PUPPET \
-  -e WECHATY_PUPPET_HOSTIE_TOKEN \
-  -e WECHATY_HOSTIE_PORT \
+  -e WECHATY_PUPPET_PADLOCAL_TOKEN \
+  -e WECHATY_PUPPET_SERVER_PORT \
   -e WECHATY_TOKEN \
-  -p "$WECHATY_HOSTIE_PORT" \
-  wechaty/wechaty
+  -p "$WECHATY_PUPPET_SERVER_PORT" \
+  wechaty/wechaty:0.78
 ```
 
-Learn more: [How to create your own Wechaty Hostie Token with the Web Protocol #1986](https://github.com/wechaty/wechaty/issues/1986) This step you will need a Wechaty Token for connecting to the Wechaty Puppet Service. Please read the issue `wechaty/wechaty#1986` for how to make it by yourself.
+> Learn more: [Puppet Service: DIY](https://wechaty.js.org/docs/puppet-services/diy/) This guide will help you generate a Wechaty Token for connecting to the Wechaty Puppet Service.
 
 ## Live Coding Explanation
 
@@ -98,7 +85,7 @@ import { WechatyModule } from '@chatie/angular'
 ```html
 <wechaty
   #wechaty
-  token="puppet_hostie_ng-plus-wechaty"
+  token="insecure_wechaty_puppet_service_token_diy"
 
   (heartbeat) = "onHeartbeat($event)"
   (scan)      = "onScan($event)"
@@ -149,6 +136,27 @@ Learn more:
 1. [TensorFlow.js models: Question and Answer demo](https://storage.googleapis.com/tfjs-models/demos/mobilebert-qna/index.html)
 1. [TensorFlow Blog: Exploring helpful uses for BERT in your browser with Tensorflow.js](https://blog.tensorflow.org/2020/03/exploring-helpful-uses-for-bert-in-your-browser-tensorflow-js.html)
 
+## Talks
+
+### 1. Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular, Huan, Nov 21, 2020
+
+[![Huan Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular](docs/images/ng2020-huan-keynote.webp)](https://ng-plus.dev/#/topics)
+
+> November 21 - 22 @online
+
+Knowledge, ideas, and insights for the Next Generation
+
+- ngChina 2020: <https://ng-plus.dev>
+- ngChina 2019: <https://ng-china.org>
+
+#### Slides & Video
+
+[![Huan Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular](docs/images/conversational-ai-chatbot-and-angular.png)](https://docs.google.com/presentation/d/1Gd3D8bS6OifXDsdSe0x5i6XsP_uISX3W9tR8yBA0mYs/edit?usp=sharing)
+
+> Google Slides <https://docs.google.com/presentation/d/1Gd3D8bS6OifXDsdSe0x5i6XsP_uISX3W9tR8yBA0mYs/edit?usp=sharing>
+
+Talk Video: <https://youtu.be/SACugbTNQnc>
+
 ## Resources
 
 1. [TensorFlow.js Tutorials](https://www.tensorflow.org/js/tutorials)
@@ -167,4 +175,4 @@ Learn more:
 
 - Docs released under Creative Commons
 - Code released under the Apache-2.0 License
-- Code & Docs © 2020 Huan LI \<zixia@zixia.net\>
+- Code & Docs © 2020-2021 Huan LI \<zixia@zixia.net\>
