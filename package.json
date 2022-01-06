@@ -1,6 +1,6 @@
 {
   "name": "ng2020-wechaty",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular",
   "main": "index.js",
   "dependencies": {
