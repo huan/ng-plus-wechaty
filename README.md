@@ -1,4 +1,4 @@
-# ng2020-wechaty
+# ng-plus-wechaty
 
 Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular
 
@@ -11,11 +11,13 @@ Knowledge, ideas, and insights for the Next Generation
 - ngChina 2020: <https://ng-plus.dev>
 - ngChina 2019: <https://ng-china.org>
 
-## Slides
+## Slides & Video
 
 [![Huan Ng+ Developers Conference 2020 Keynote: Conversational AI, Chatbot, and Angular](docs/images/conversational-ai-chatbot-and-angular.png)](https://docs.google.com/presentation/d/1Gd3D8bS6OifXDsdSe0x5i6XsP_uISX3W9tR8yBA0mYs/edit?usp=sharing)
 
 > Google Slides <https://docs.google.com/presentation/d/1Gd3D8bS6OifXDsdSe0x5i6XsP_uISX3W9tR8yBA0mYs/edit?usp=sharing>
+
+Talk Video: <https://youtu.be/SACugbTNQnc>
 
 ## Requirements
 
